@@ -1,0 +1,253 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #d9e4ef;
+  background-image:
+    linear-gradient(#c7d7e8 1px, transparent 1px),
+    linear-gradient(90deg, #c7d7e8 1px, transparent 1px);
+  background-size: 25px 25px;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 35px 15px;
+}
+
+.container {
+  width: 100%;
+  max-width: 680px;
+  min-height: 500px;
+  padding: 35px 42px;
+  background: #fffef8;
+  border: 1px solid #d1d5db;
+  border-top: 8px solid #1d4ed8;
+  border-radius: 6px;
+  box-shadow: 8px 10px 0 rgba(30,64,175,.16);
+  position: relative;
+  overflow: hidden;
+}
+
+/* NOTEBOOK HORIZONTAL LINES */
+.container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(
+    to bottom,
+    transparent 26px,
+    #dbeafe 27px
+  );
+  background-size: 100% 27px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* NOTEBOOK RED VERTICAL LINE */
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 55px;
+  width: 2px;
+  background: #fca5a5;
+  opacity: .8;
+  z-index: 1;
+}
+
+.container > * {
+  position: relative;
+  z-index: 2;
+}
+
+h1 {
+  margin: 0 0 25px;
+  padding-bottom: 14px;
+  border-bottom: 2px dashed #93c5fd;
+  color: #1e3a8a;
+  font: bold 31px Georgia, serif;
+  text-align: center;
+}
+
+h1::after {
+  content: "PLACEMENT PRACTICE PORTAL";
+  display: block;
+  margin-top: 8px;
+  color: #64748b;
+  font: bold 11px Arial;
+  letter-spacing: 1.5px;
+}
+
+label {
+  display: block;
+  margin: 18px 0 7px;
+  color: #1e3a8a;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #94a3b8;
+  border-radius: 4px;
+  background: white;
+  color: #1e293b;
+  font-size: 15px;
+}
+
+button {
+  margin-top: 18px;
+  margin-right: 10px;
+  padding: 11px 18px;
+  border: 2px solid #1d4ed8;
+  border-radius: 4px;
+  background: #2563eb;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1e40af;
+}
+
+.container p {
+  color: #334155;
+  line-height: 1.6;
+}
+
+.container p b {
+  color: #1e3a8a;
+}
+
+.interview-page > p {
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+.interview-page > p:nth-child(3) {
+  color: #1d4ed8;
+  font-weight: bold;
+}
+
+.interview-page > p:nth-child(4) {
+  margin-bottom: 18px;
+  color: #64748b;
+  font-style: italic;
+}
+
+.question-box {
+  margin-bottom: 18px;
+  padding: 18px;
+  border: 1px solid #bfdbfe;
+  border-radius: 4px;
+  background: rgba(248,251,255,.94);
+}
+
+.question-box h3 {
+  margin: 0 0 12px;
+  color: #1d4ed8;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+.question-box h3::before {
+  content: "Q. ";
+}
+
+.question-box p {
+  margin: 0;
+  color: #1e293b;
+  font: 16px/1.7 Georgia, serif;
+}
+
+textarea {
+  display: block;
+  width: 100%;
+  height: 145px;
+  margin: 0;
+  padding: 14px;
+  border: 1px solid #94a3b8;
+  border-radius: 4px;
+  background: #fffef8;
+  background-image: linear-gradient(#dbeafe 1px, transparent 1px);
+  background-size: 100% 27px;
+  color: #1e293b;
+  font: 15px Arial;
+  line-height: 27px;
+  resize: vertical;
+  outline: none;
+}
+
+.interview-page button {
+  margin-top: 16px;
+}
+
+.result-box {
+  padding: 30px 22px;
+  border: 2px solid #1d4ed8;
+  border-radius: 5px;
+  background: rgba(248,251,255,.95);
+  text-align: center;
+}
+
+.result-box h2 {
+  margin: 0 0 18px;
+  color: #1e3a8a;
+  font: bold 26px Georgia, serif;
+}
+
+.result-box .question-box {
+  text-align: left;
+  margin-top: 20px;
+}
+
+details {
+  margin-top: 14px;
+  padding: 10px;
+  border: 1px solid #86efac;
+  border-radius: 4px;
+  background: #f0fdf4;
+}
+
+summary {
+  color: #15803d;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+details p {
+  color: #14532d !important;
+}
+
+@media (max-width: 520px) {
+  .app {
+    align-items: flex-start;
+    padding: 20px 10px;
+  }
+
+  .container {
+    padding: 28px 22px;
+  }
+
+  .container::before {
+    left: 28px;
+  }
+
+  h1 {
+    font-size: 25px;
+  }
+
+  button {
+    width: 100%;
+    margin-right: 0;
+  }
+}
